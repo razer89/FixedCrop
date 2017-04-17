@@ -1,9 +1,10 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 //apply plugin: 'maven'
 //apply plugin: 'signing'
 //apply from: '../.publishing/sonatype.gradle'
 
-archivesBaseName = 'android-crop'
+//archivesBaseName = 'android-crop'
 
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
@@ -28,3 +29,12 @@ dependencies {
 //    androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.0'
 }
 
+publish {
+    groupId = 'com.github.razer89'
+    artifactId = 'fixedcrop'
+    publishVersion = '0.1'
+    desc = 'Small library for picking images from gallery or camera, and cropping it after that'
+    licences = ['MIT']
+    website = 'https://github.com/razer89/FixedCrop'
+}
+//gradlew clean build bintrayUpload -PbintrayUser=razer0312 -PbintrayKey=4b441916ad4a3081b485dbb5ce0444d3d678096b -PdryRun=false
